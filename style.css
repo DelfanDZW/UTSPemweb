@@ -100,6 +100,20 @@ input[type="checkbox"]:checked + span {
     padding: 5px;
 }
 
+.logout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
 button[type="reset"] {
     background-color: #ff4c4c;
     color: white;

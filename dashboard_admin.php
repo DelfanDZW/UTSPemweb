@@ -50,6 +50,34 @@ $stmt = $pdo->query("SELECT * FROM characters");
 $characters = $stmt->fetchAll();
 ?>
 
+<html>
+    <link rel="stylesheet" href="styleadmin.css">
+    <h2>Tambah Karakter Baru</h2>
+    <form method="POST" action="dashboard_admin.php" enctype="multipart/form-data">
+        <label>Nama Karakter:</label>
+        <input type="text" name="name" required><br>
+    
+        <label>Pilih Tag:</label><br>
+        <input type="checkbox" name="tags[]" value="Melee"> Melee<br>
+        <input type="checkbox" name="tags[]" value="Defense"> Defense<br>
+        <input type="checkbox" name="tags[]" value="Ranged"> Ranged<br>
+        <input type="checkbox" name="tags[]" value="Caster"> Caster<br>
+        <input type="checkbox" name="tags[]" value="Medic"> Medic<br>
+        <input type="checkbox" name="tags[]" value="Guard"> Guard<br>
+        <input type="checkbox" name="tags[]" value="Vanguard"> Vanguard<br>
+        <input type="checkbox" name="tags[]" value="Sniper"> Sniper<br>
+        <input type="checkbox" name="tags[]" value="Supporter"> Supporter<br>
+    
+        <label>Deskripsi Karakter:</label><br>
+        <textarea name="description" rows="5" cols="30" required></textarea><br>
+    
+        <label>Unggah Gambar Karakter:</label>
+        <input type="file" name="image" accept="image/*" required><br>
+    
+        <button type="submit">Tambah Karakter</button>
+    </form>
+</html>
+
 <h2>Daftar Karakter yang Sudah Ada</h2>
 <table border="1">
     <tr>
@@ -71,28 +99,3 @@ $characters = $stmt->fetchAll();
     </tr>
     <?php endforeach; ?>
 </table>
-
-<h2>Tambah Karakter Baru</h2>
-<form method="POST" action="dashboard_admin.php" enctype="multipart/form-data">
-    <label>Nama Karakter:</label>
-    <input type="text" name="name" required><br>
-    
-    <label>Pilih Tag:</label><br>
-    <input type="checkbox" name="tags[]" value="Melee"> Melee<br>
-    <input type="checkbox" name="tags[]" value="Defense"> Defense<br>
-    <input type="checkbox" name="tags[]" value="Ranged"> Ranged<br>
-    <input type="checkbox" name="tags[]" value="Caster"> Caster<br>
-    <input type="checkbox" name="tags[]" value="Medic"> Medic<br>
-    <input type="checkbox" name="tags[]" value="Guard"> Guard<br>
-    <input type="checkbox" name="tags[]" value="Vanguard"> Vanguard<br>
-    <input type="checkbox" name="tags[]" value="Sniper"> Sniper<br>
-    <input type="checkbox" name="tags[]" value="Supporter"> Supporter<br>
-    
-    <label>Deskripsi Karakter:</label><br>
-    <textarea name="description" rows="5" cols="30" required></textarea><br>
-    
-    <label>Unggah Gambar Karakter:</label>
-    <input type="file" name="image" accept="image/*" required><br>
-    
-    <button type="submit">Tambah Karakter</button>
-</form>

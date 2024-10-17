@@ -13,8 +13,9 @@ $stmt->execute([$user_id]);
 $user = $stmt->fetch();
 
 if ($user) {
-    echo "<h1>Selamat datang</h1>";
+    echo "<h1>Recruitment Calculator</h1>";
     echo "<h1>Pilih Tag</h1>";
+    echo '<a href="logout.php" class="logout-button">Logout</a>';
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $selected_tags = $_POST['tags'];

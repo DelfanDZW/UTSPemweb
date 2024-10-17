@@ -1,6 +1,8 @@
 <?php
 require 'db.php';
 
+$registrationMessage = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
@@ -8,8 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare("INSERT INTO users (username, password, role) VALUES (?, ?, 'user')");
     $stmt->execute([$username, $password]);
 
-    echo "Pendaftaran pengguna berhasil! Silakan login.";
-    echo '<a href="login.php"><button>Login Pengguna</button></a>';  
+    $registrationMessage = "Pendaftaran pengguna berhasil! Silakan login.";
 }
 ?>
 <html lang="en">
@@ -28,6 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Daftar Pengguna Baru</button>
     </form>
+
+    <?php if (!empty($registrationMessage)) : ?>
+        <p><?php echo $registrationMessage; ?></p>
+        <a href="login.php"><button>Login</button></a>
+    <?php endif; ?>
 
 </body>
 </html>
