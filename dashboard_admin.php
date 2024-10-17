@@ -76,6 +76,7 @@ $characters = $stmt->fetchAll();
     
         <button type="submit">Tambah Karakter</button>
     </form>
+    <a href="logout.php" id="logout-button">Logout</a>
 </html>
 
 <h2>Daftar Karakter yang Sudah Ada</h2>
