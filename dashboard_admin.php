@@ -23,8 +23,6 @@ if (isset($_GET['delete'])) {
         $stmt->execute([$character_id]);
         
         echo "Karakter berhasil dihapus!";
-    } else {
-        echo "Karakter tidak ditemukan.";
     }
 }
 
