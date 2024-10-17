@@ -37,7 +37,7 @@ if ($user) {
                 echo "<div>";
                 echo "<h3>" . htmlspecialchars($character['name']) . "</h3>";
                 
-                // Menambahkan link ke halaman character_detail.php dengan id karakter
+                // Menambahkan link ke halaman detail karakter
                 echo '<a href="character_detail.php?id=' . htmlspecialchars($character['id']) . '">';
                 echo '<img src="img/' . htmlspecialchars($character['image']) . '" alt="Character Image" width="150" height="150">';
                 echo '</a>';

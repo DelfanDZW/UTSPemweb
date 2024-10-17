@@ -7,8 +7,8 @@ if (!isset($_SESSION['admin_id'])) {
     exit();
 }
 
-if (isset($_GET['delete'])) {
-    $character_id = $_GET['delete'];
+if (isset($_POST['delete'])) {
+    $character_id = $_POST['delete'];
     $stmt = $pdo->prepare("SELECT image FROM characters WHERE id = ?");
     $stmt->execute([$character_id]);
     $character = $stmt->fetch();
@@ -92,8 +92,10 @@ $characters = $stmt->fetchAll();
         <td><?php echo htmlspecialchars($character['description']); ?></td>
         <td><img src="img/<?php echo htmlspecialchars($character['image']); ?>" width="100" height="100"></td>
         <td>
+            <a href="updatechar.php?id=<?php echo $character['id']; ?>">Edit</a> 
             <a href="dashboard_admin.php?delete=<?php echo $character['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus karakter ini?')">Hapus</a>
         </td>
+
     </tr>
     <?php endforeach; ?>
 </table>

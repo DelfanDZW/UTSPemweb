@@ -46,12 +46,12 @@ tr:nth-child(even) {
 
 a {
     text-decoration: none;
-    color: #e74c3c;
+    color: #e7a03c;
     font-weight: bold;
 }
 
 a:hover {
-    color: #c0392b;
+    color: rgb(165, 112, 38);
 }
 
 form {
