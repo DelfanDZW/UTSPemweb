@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Admin</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylelog.css">
 </head>
 <body>
 
@@ -43,10 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <button type="submit">Login</button>
     </form>
+    <a href="registrasi_admin.php"><button>Registrasi Admin</button></a>
 </div>
 
 </body>
 </html>
 
 
-<a href="registrasi_admin.php"><button>Registrasi Admin</button></a>

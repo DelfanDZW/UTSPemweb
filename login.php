@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylelog.css">
 </head>
 <body>
 
@@ -44,8 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <button type="submit">Login</button>
     </form>
+    <a href="registrasi.php"><button>Registrasi</button></a>
 </div>
-<a href="registrasi.php"><button>Registrasi</button></a>
+
 
 </body>
 </html>
