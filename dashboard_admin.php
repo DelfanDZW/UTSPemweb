@@ -30,7 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $tags = implode(',', $_POST['tags']);
     $description = $_POST['description'];
-    
     $image = $_FILES['image']['name'];
     $target_dir = "img/";
     $target_file = $target_dir . basename($image);
