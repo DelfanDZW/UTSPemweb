@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
     <link rel="stylesheet" href="styleadmin.css">
     <h2>Edit Karakter</h2>
-    <form method="POST" action="edit_character.php?id=<?php echo $character_id; ?>" enctype="multipart/form-data">
+    <form method="POST" action="updatechar.php?id=<?php echo $character_id; ?>" enctype="multipart/form-data">
         <label>Nama Karakter:</label>
         <input type="text" name="name" value="<?php echo htmlspecialchars($character['name']); ?>" required><br>
     
