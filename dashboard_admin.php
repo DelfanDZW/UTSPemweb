@@ -7,8 +7,9 @@ if (!isset($_SESSION['admin_id'])) {
     exit();
 }
 
-if (isset($_POST['delete'])) {
-    $character_id = $_POST['delete'];
+if (isset($_GET['delete'])) {
+    $character_id = $_GET['delete'];
+
     $stmt = $pdo->prepare("SELECT image FROM characters WHERE id = ?");
     $stmt->execute([$character_id]);
     $character = $stmt->fetch();
@@ -22,11 +23,13 @@ if (isset($_POST['delete'])) {
         $stmt = $pdo->prepare("DELETE FROM characters WHERE id = ?");
         $stmt->execute([$character_id]);
         
+        header('location: dashboard_admin.php');
+
         echo "Karakter berhasil dihapus!";
     }
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['delete'])) {
     $name = $_POST['name'];
     $tags = implode(',', $_POST['tags']);
     $description = $_POST['description'];
@@ -95,7 +98,6 @@ $characters = $stmt->fetchAll();
             <a href="updatechar.php?id=<?php echo $character['id']; ?>">Edit</a> 
             <a href="dashboard_admin.php?delete=<?php echo $character['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus karakter ini?')">Hapus</a>
         </td>
-
     </tr>
     <?php endforeach; ?>
 </table>

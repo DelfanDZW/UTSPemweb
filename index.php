@@ -1,3 +1,25 @@
+<?php
+require 'db.php';
+session_start();
+
+// Jika sudah login, arahkan ke dashboard
+if (isset($_SESSION['user_id'])) {
+    header('Location: dashboard.php');
+    exit();
+}
+
+if (isset($_SESSION['admin_id'])) {
+    header('Location: dashboard_admin.php');
+    exit();
+}
+
+// Tampilkan pesan error jika pengguna diarahkan dari dashboard
+if (isset($_SESSION['error_message'])) {
+    echo "<p style='color:red;'>" . $_SESSION['error_message'] . "</p>";
+    unset($_SESSION['error_message']); 
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

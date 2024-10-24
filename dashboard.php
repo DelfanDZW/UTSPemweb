@@ -3,9 +3,11 @@ require 'db.php';
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    $_SESSION['error_message'] = "Silakan login dulu.";
+    header('Location: index.php');
     exit();
 }
+
 
 $user_id = $_SESSION['user_id'];
 $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
