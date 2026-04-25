@@ -188,6 +188,8 @@ is the simplest method
 
 * The `backup/` folder contains an older version using native PHP (without modern frontend)
 * The `dist/` folder contains the Vite build output (ready for deployment)
+* This project is intended for educational purposes only.
+* Security implementation is still basic and not suitable for production use.
 
 ---
 
