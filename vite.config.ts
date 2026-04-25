@@ -8,8 +8,8 @@ export default defineConfig({
     proxy: {
       // Mengarahkan semua request '/api' ke server Laragon (PHP)
       '/api': {
-        // Karena Laragon document root ada di folder ini langsung
-        target: 'http://localhost', 
+        // Menggunakan PHP Built-in Server
+        target: 'http://localhost:8000', 
         changeOrigin: true,
       }
     }
